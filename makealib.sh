@@ -4,9 +4,9 @@ set -e
 rm -rf outlib || true
 rm -rf outlib_interop || true
 rm -rf outlib_cardviewstub || true
-android create lib-project -t 7 -k com.microsoft.onlineid.sdk -p outlib
-android create lib-project -t 7 -k com.microsoft.onlineid.interop -p outlib_interop
-android create lib-project -t 7 -k android.support.v7.cardview -p outlib_cardviewstub
+android create lib-project -t android-23 -k com.microsoft.onlineid.sdk -p outlib
+android create lib-project -t android-23 -k com.microsoft.onlineid.interop -p outlib_interop
+android create lib-project -t android-23 -k android.support.v7.cardview -p outlib_cardviewstub
 rm -rf outlib/res outlib/src outlib/AndroidManifest.xml
 cat >outlib/AndroidManifest.xml << EOF
 <?xml version="1.0" encoding="utf-8"?>
