@@ -1,4 +1,5 @@
 #!/bin/bash
+# ./makealib.sh
 set -e
 rm -rf outlib || true
 rm -rf outlib_interop || true
@@ -101,7 +102,7 @@ cat >outlib/res/values/attrs_styleable.xml <<EOF
   </declare-styleable>
 </resources>
 EOF
-cp /home/zhuowei/downloads/android-sdk-linux_86/android-compatibility/v7/cardview/res/values/attrs.xml outlib/res/values/attrs_cardview.xml
+cp "$ANDROID_HOME/extras/android/support/v7/cardview/res/values/attrs.xml" outlib/res/values/attrs_cardview.xml
 grep -v "\"font\"" res/values/attrs.xml|grep -v "\"isUnderlined\"" >outlib/res/values/attrs.xml
 # remove the card attrs; we add the real ones from the lib for styleable
 REMOVELIST="""cardBackgroundColor
